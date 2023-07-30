@@ -26,6 +26,9 @@ class _LoginPageState extends State<LoginPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             const Text('Welcome back! Login with your credentials'),
             const SizedBox(height: 50),
             Padding(
@@ -52,9 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                               MaterialStatePropertyAll(Colors.green),
                         ),
                         onPressed: () {
-                          debugPrint(_emailController.text);
-
-                          debugPrint(_passwordController.text);
+                          Navigator.pushNamed(context, '/home');
                         },
                         child: const Text(
                           'Login',

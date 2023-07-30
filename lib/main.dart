@@ -1,3 +1,4 @@
+import 'package:cp_mobile/screens/home_screen.dart';
 import 'package:cp_mobile/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +18,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
+        },
     );
   }
 }
-
-
