@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   GestureDetector(
                     child: buildDrawerMenuItem('Logout', Icons.logout),
-                    onTap: () => {Navigator.pushNamed(context, '/')},
+                    onTap: () => {Navigator.pushNamed(context, '/login')},
                   ),
                 ],
               ),

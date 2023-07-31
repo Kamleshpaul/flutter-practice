@@ -1,5 +1,6 @@
 import 'package:cp_mobile/screens/home_screen.dart';
 import 'package:cp_mobile/screens/login_screen.dart';
+import 'package:cp_mobile/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,11 +19,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
-        '/': (context) => const LoginPage(),
-        '/home': (context) => const HomePage(),
-        },
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegisterScreen(),
+        '/home': (context) => const HomeScreen(),
+      },
     );
   }
 }

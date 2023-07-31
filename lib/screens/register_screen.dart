@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
 final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
+final TextEditingController _passwordConfirmController =
+    TextEditingController();
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Login',
+              'Create Account',
               style: TextStyle(
                 color: Colors.green,
                 fontSize: 25,
@@ -29,7 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 10,
             ),
-            const Text('Welcome back! Login with your credentials'),
             const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.all(20),
@@ -46,6 +47,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       obscureText: true,
                       decoration:
                           const InputDecoration(label: Text('Enter Password'))),
+                  TextField(
+                      controller: _passwordConfirmController,
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                          label: Text('Enter Confrim Password'))),
                   const SizedBox(height: 30),
                   SizedBox(
                     width: double.infinity,
@@ -55,33 +61,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               MaterialStatePropertyAll(Colors.green),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/home');
+                          Navigator.pushNamed(context, '/login');
                         },
                         child: const Text(
-                          'Login',
+                          'Register',
                           style: TextStyle(color: Colors.white),
                         )),
                   )
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(50),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("Don't have an account? "),
-            GestureDetector(
-              onTap: () => {Navigator.pushNamed(context, '/register')},
-              child: const Text(
-                "Register",
-                style:
-                    TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-              ),
-            )
           ],
         ),
       ),
